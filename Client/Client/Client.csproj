@@ -46,7 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connect.cs" />
+    <Compile Include="Client_Connect.cs" />
+    <Compile Include="Login_Connect.cs" />
     <Compile Include="office_client.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +68,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="office_client.resx">
       <DependentUpon>office_client.cs</DependentUpon>
     </EmbeddedResource>
