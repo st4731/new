@@ -17,7 +17,7 @@ namespace Client
             string IP = "192.168.0.13";//"210.93.84.207";
             try
             {
-                socket.Connect(IP, 5000);
+                socket.Connect(IP, 5000);      
             }
             catch
             {

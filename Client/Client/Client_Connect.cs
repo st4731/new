@@ -15,10 +15,10 @@ namespace Client
         public static void 클라이언트소켓()
         {
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            string IP = "210.93.84.207";
+            string IP = "192.168.0.13";
             try
             {
-                socket.Connect(IP, 5001);
+                socket.Connect(IP, 5000);
 
                 //socket.Send();
             }

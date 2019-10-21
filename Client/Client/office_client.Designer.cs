@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.ADD_BUTTON = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Send_TEXTBOX = new System.Windows.Forms.TextBox();
+            this.Send_Phone_TEXTBOX = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Send_address_TEXTBOX = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Contents_TEXTBOX = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Requests_TEXTBOX = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Receive_address_TEXTBOX = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Receive_Phone_TEXTBOX = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Receive_TEXTBOX = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.Payment_COMBOBOX = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // button1
+            // ADD_BUTTON
             // 
-            this.button1.Location = new System.Drawing.Point(684, 378);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ADD_BUTTON.Location = new System.Drawing.Point(397, 272);
+            this.ADD_BUTTON.Name = "ADD_BUTTON";
+            this.ADD_BUTTON.Size = new System.Drawing.Size(75, 23);
+            this.ADD_BUTTON.TabIndex = 0;
+            this.ADD_BUTTON.Text = "등록";
+            this.ADD_BUTTON.UseVisualStyleBackColor = true;
+            this.ADD_BUTTON.Click += new System.EventHandler(this.ADD_BUTTON_Click);
             // 
             // label1
             // 
@@ -65,19 +67,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "보내는 분";
             // 
-            // textBox1
+            // Send_TEXTBOX
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 2;
+            this.Send_TEXTBOX.Location = new System.Drawing.Point(154, 71);
+            this.Send_TEXTBOX.Name = "Send_TEXTBOX";
+            this.Send_TEXTBOX.Size = new System.Drawing.Size(100, 21);
+            this.Send_TEXTBOX.TabIndex = 2;
             // 
-            // textBox2
+            // Send_Phone_TEXTBOX
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 4;
+            this.Send_Phone_TEXTBOX.Location = new System.Drawing.Point(154, 98);
+            this.Send_Phone_TEXTBOX.Name = "Send_Phone_TEXTBOX";
+            this.Send_Phone_TEXTBOX.Size = new System.Drawing.Size(100, 21);
+            this.Send_Phone_TEXTBOX.TabIndex = 4;
             // 
             // label2
             // 
@@ -88,12 +90,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "휴대전화";
             // 
-            // textBox3
+            // Send_address_TEXTBOX
             // 
-            this.textBox3.Location = new System.Drawing.Point(154, 125);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 6;
+            this.Send_address_TEXTBOX.Location = new System.Drawing.Point(154, 125);
+            this.Send_address_TEXTBOX.Name = "Send_address_TEXTBOX";
+            this.Send_address_TEXTBOX.Size = new System.Drawing.Size(100, 21);
+            this.Send_address_TEXTBOX.TabIndex = 6;
             // 
             // label3
             // 
@@ -104,12 +106,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "주소";
             // 
-            // textBox4
+            // Contents_TEXTBOX
             // 
-            this.textBox4.Location = new System.Drawing.Point(154, 152);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 8;
+            this.Contents_TEXTBOX.Location = new System.Drawing.Point(154, 152);
+            this.Contents_TEXTBOX.Name = "Contents_TEXTBOX";
+            this.Contents_TEXTBOX.Size = new System.Drawing.Size(100, 21);
+            this.Contents_TEXTBOX.TabIndex = 8;
             // 
             // label4
             // 
@@ -120,12 +122,12 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "내용물";
             // 
-            // textBox5
+            // Requests_TEXTBOX
             // 
-            this.textBox5.Location = new System.Drawing.Point(372, 152);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 16;
+            this.Requests_TEXTBOX.Location = new System.Drawing.Point(372, 152);
+            this.Requests_TEXTBOX.Name = "Requests_TEXTBOX";
+            this.Requests_TEXTBOX.Size = new System.Drawing.Size(100, 21);
+            this.Requests_TEXTBOX.TabIndex = 16;
             // 
             // label5
             // 
@@ -136,12 +138,12 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "배송시 요청사항";
             // 
-            // textBox6
+            // Receive_address_TEXTBOX
             // 
-            this.textBox6.Location = new System.Drawing.Point(372, 125);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
-            this.textBox6.TabIndex = 14;
+            this.Receive_address_TEXTBOX.Location = new System.Drawing.Point(372, 125);
+            this.Receive_address_TEXTBOX.Name = "Receive_address_TEXTBOX";
+            this.Receive_address_TEXTBOX.Size = new System.Drawing.Size(100, 21);
+            this.Receive_address_TEXTBOX.TabIndex = 14;
             // 
             // label6
             // 
@@ -152,12 +154,12 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "주소";
             // 
-            // textBox7
+            // Receive_Phone_TEXTBOX
             // 
-            this.textBox7.Location = new System.Drawing.Point(372, 98);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 21);
-            this.textBox7.TabIndex = 12;
+            this.Receive_Phone_TEXTBOX.Location = new System.Drawing.Point(372, 98);
+            this.Receive_Phone_TEXTBOX.Name = "Receive_Phone_TEXTBOX";
+            this.Receive_Phone_TEXTBOX.Size = new System.Drawing.Size(100, 21);
+            this.Receive_Phone_TEXTBOX.TabIndex = 12;
             // 
             // label7
             // 
@@ -168,12 +170,12 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "휴대전화";
             // 
-            // textBox8
+            // Receive_TEXTBOX
             // 
-            this.textBox8.Location = new System.Drawing.Point(372, 71);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 21);
-            this.textBox8.TabIndex = 10;
+            this.Receive_TEXTBOX.Location = new System.Drawing.Point(372, 71);
+            this.Receive_TEXTBOX.Name = "Receive_TEXTBOX";
+            this.Receive_TEXTBOX.Size = new System.Drawing.Size(100, 21);
+            this.Receive_TEXTBOX.TabIndex = 10;
             // 
             // label8
             // 
@@ -184,30 +186,43 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "받는 분";
             // 
+            // Payment_COMBOBOX
+            // 
+            this.Payment_COMBOBOX.FormattingEnabled = true;
+            this.Payment_COMBOBOX.Items.AddRange(new object[] {
+            "선불",
+            "착불"});
+            this.Payment_COMBOBOX.Location = new System.Drawing.Point(351, 194);
+            this.Payment_COMBOBOX.Name = "Payment_COMBOBOX";
+            this.Payment_COMBOBOX.Size = new System.Drawing.Size(121, 20);
+            this.Payment_COMBOBOX.TabIndex = 17;
+            // 
             // office_client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.Payment_COMBOBOX);
+            this.Controls.Add(this.Requests_TEXTBOX);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.Receive_address_TEXTBOX);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.Receive_Phone_TEXTBOX);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.Receive_TEXTBOX);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.Contents_TEXTBOX);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Send_address_TEXTBOX);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Send_Phone_TEXTBOX);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Send_TEXTBOX);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ADD_BUTTON);
             this.Name = "office_client";
             this.Text = "Form1";
+            this.Shown += new System.EventHandler(this.office_client_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,23 +230,24 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ADD_BUTTON;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Send_TEXTBOX;
+        private System.Windows.Forms.TextBox Send_Phone_TEXTBOX;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Send_address_TEXTBOX;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Contents_TEXTBOX;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Requests_TEXTBOX;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox Receive_address_TEXTBOX;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox Receive_Phone_TEXTBOX;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox Receive_TEXTBOX;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox Payment_COMBOBOX;
     }
 }
 
