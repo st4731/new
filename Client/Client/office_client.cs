@@ -50,5 +50,25 @@ namespace Client
             Contents_TEXTBOX.Clear();
             Payment_COMBOBOX.SelectedIndex = 0;
         }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
