@@ -47,20 +47,20 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Payment_COMBOBOX = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CHECK_BUTTON = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ADD_BUTTON
@@ -152,7 +152,7 @@
             this.label5.Size = new System.Drawing.Size(93, 12);
             this.label5.TabIndex = 15;
             this.label5.Text = "배송시 요청사항";
-            this.label5.Click += new System.EventHandler(this.Label5_Click);
+            
             // 
             // Receive_address_TEXTBOX
             // 
@@ -169,7 +169,7 @@
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 13;
             this.label6.Text = "주소";
-            this.label6.Click += new System.EventHandler(this.Label6_Click);
+            
             // 
             // Receive_Phone_TEXTBOX
             // 
@@ -186,7 +186,7 @@
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 11;
             this.label7.Text = "휴대전화";
-            this.label7.Click += new System.EventHandler(this.Label7_Click);
+            
             // 
             // Receive_TEXTBOX
             // 
@@ -203,7 +203,7 @@
             this.label8.Size = new System.Drawing.Size(45, 12);
             this.label8.TabIndex = 9;
             this.label8.Text = "받는 분";
-            this.label8.Click += new System.EventHandler(this.Label8_Click);
+            
             // 
             // Payment_COMBOBOX
             // 
@@ -225,14 +225,15 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "지불방법";
             // 
-            // button1
+            // CHECK_BUTTON
             // 
-            this.button1.Location = new System.Drawing.Point(698, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "조회";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CHECK_BUTTON.Location = new System.Drawing.Point(698, 121);
+            this.CHECK_BUTTON.Name = "CHECK_BUTTON";
+            this.CHECK_BUTTON.Size = new System.Drawing.Size(75, 23);
+            this.CHECK_BUTTON.TabIndex = 19;
+            this.CHECK_BUTTON.Text = "조회";
+            this.CHECK_BUTTON.UseVisualStyleBackColor = true;
+            this.CHECK_BUTTON.Click += new System.EventHandler(this.CHECK_BUTTON_Click);
             // 
             // tabControl1
             // 
@@ -248,7 +249,7 @@
             // 
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.Payment_COMBOBOX);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.CHECK_BUTTON);
             this.tabPage1.Controls.Add(this.Requests_TEXTBOX);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label5);
@@ -274,6 +275,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "물품 등록";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 150);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(775, 268);
+            this.dataGridView1.TabIndex = 20;
             // 
             // tabPage2
             // 
@@ -301,24 +311,6 @@
             this.comboBox1.Size = new System.Drawing.Size(100, 20);
             this.comboBox1.TabIndex = 23;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 404);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 12);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "내용물";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 377);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 12);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "내용물";
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(326, 399);
@@ -328,6 +320,15 @@
             this.button2.Text = "등록";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 404);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 12);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "내용물";
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(72, 374);
@@ -335,14 +336,14 @@
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 22;
             // 
-            // dataGridView1
+            // label11
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 150);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(775, 268);
-            this.dataGridView1.TabIndex = 20;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 377);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 12);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "내용물";
             // 
             // office_client
             // 
@@ -356,9 +357,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -384,7 +385,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox Payment_COMBOBOX;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CHECK_BUTTON;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;

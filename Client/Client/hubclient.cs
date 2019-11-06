@@ -20,7 +20,7 @@ namespace Client
         {
             try
             {
-                Client_Connect.클라이언트소켓();
+               // Client_Connect.클라이언트소켓();
             }
             catch
             {
@@ -33,7 +33,7 @@ namespace Client
             string str = "[{id}:{" + Num_TEXTBOX.Text + "}]";
             byte[] StrByte = Encoding.UTF8.GetBytes(str);
             // MessageBox.Show(Convert.ToString(StrByte));
-            Client_Connect.socket.Send(StrByte);
+            //Client_Connect.socket.Send(StrByte);
             Text_Clear();
         }
         void Text_Clear()

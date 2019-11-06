@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace Client
 {
@@ -21,7 +23,7 @@ namespace Client
         {
             try
             {
-                Client_Connect.클라이언트소켓();
+               //Client_Connect.클라이언트소켓();
             }
             catch
             {
@@ -30,12 +32,18 @@ namespace Client
         }
         private void ADD_BUTTON_Click(object sender, EventArgs e)
         {
+           /* String sResponse = "";
+
+            WebClient webClient = new WebClient();
+            webClient.Encoding = UTF8Encoding.UTF8;
+
+            sResponse = webClient.UploadString("http://127.0.0.1/api/useradd", "{\"userid\": \"bigenergy",\"username\": \"빅에너지\"}");*/
             string str = "[{보내는분}:{" + Send_TEXTBOX.Text + "},{보내는분 휴대전화}:{" + Send_Phone_TEXTBOX.Text + "},{보내는분 주소}:{" + Send_address_TEXTBOX.Text + "}," +
                 "{받는분}:{" + Receive_TEXTBOX.Text + "},{받는분 휴대전화}:{" + Receive_Phone_TEXTBOX.Text + "}," + "{받는분 주소}:{" + Receive_address_TEXTBOX.Text + "}" +
                 ",{내용물}:{" + Contents_TEXTBOX.Text + "},{요청사항}:{" + Requests_TEXTBOX.Text + "},{지불방법}:{" + Payment_COMBOBOX.Text + "}]";
             byte[] StrByte = Encoding.UTF8.GetBytes(str);
             // MessageBox.Show(Convert.ToString(StrByte));
-            Client_Connect.socket.Send(StrByte);
+            //Client_Connect.socket.Send(StrByte);
             Text_Clear();
         }
         void Text_Clear()
@@ -69,6 +77,20 @@ namespace Client
         private void Label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CHECK_BUTTON_Click(object sender, EventArgs e)
+        {
+            String sResponse = "";
+
+            WebClient webClient = new WebClient();
+            webClient.Encoding = UTF8Encoding.UTF8;
+
+            //sResponse = webClient.DownloadString("http://210.93.84.207/rest/Check_invoice_num.php?invoice_number=1234");
+            sResponse = webClient.DownloadString("http://210.93.84.207/rest/signup.php?id=1234&pw=10&name=바보천중&phone=010-0100-0011&branch=asdf&job=0");//회원가입
+            JObject jobj = JObject.Parse(sResponse);
+            String hi = sResponse;
+            MessageBox.Show(hi);
         }
     }
 }

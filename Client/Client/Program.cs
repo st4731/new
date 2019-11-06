@@ -17,7 +17,8 @@ namespace Client
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new login());
-            Application.Run(new office_client());
+            //Application.Run(new office_client());
+            Application.Run(new Signup());
         }
     }
 }
