@@ -19,6 +19,17 @@ namespace Client
             InitializeComponent();
             Payment_COMBOBOX.SelectedIndex = 0;
         }
+        WebClient webClient = new WebClient();
+        string sResponse;
+        string url = "http://210.93.84.207";
+        string send_name = "";
+        string send_phone = "";
+        string send_address = "";
+        string reipient_name = "";
+        string reipient_phone = "";
+        string reipient_address = "";
+        string paymont = "";
+        string param = "";
         private void office_client_Shown(object sender, EventArgs e)
         {
             try
@@ -32,18 +43,13 @@ namespace Client
         }
         private void ADD_BUTTON_Click(object sender, EventArgs e)
         {
-           /* String sResponse = "";
-
-            WebClient webClient = new WebClient();
+            param = "/rest/product_regi.php?";
+            string data = "sender_name=" + Send_TEXTBOX.Text + "&sender_phone=" + Send_Phone_TEXTBOX.Text + "&sender_address=" + Send_address_TEXTBOX.Text + "&recipient_name=" + Receive_TEXTBOX.Text + "&recipient_phone=" + Receive_Phone_TEXTBOX.Text + "&recipient_address=" + Receive_address_TEXTBOX.Text + "&payment=" + Payment_COMBOBOX.Text;
+            //+ Contents_TEXTBOX.Text + Requests_TEXTBOX.Text +
+            string conn = url + param + data;
             webClient.Encoding = UTF8Encoding.UTF8;
-
-            sResponse = webClient.UploadString("http://127.0.0.1/api/useradd", "{\"userid\": \"bigenergy",\"username\": \"빅에너지\"}");*/
-            string str = "[{보내는분}:{" + Send_TEXTBOX.Text + "},{보내는분 휴대전화}:{" + Send_Phone_TEXTBOX.Text + "},{보내는분 주소}:{" + Send_address_TEXTBOX.Text + "}," +
-                "{받는분}:{" + Receive_TEXTBOX.Text + "},{받는분 휴대전화}:{" + Receive_Phone_TEXTBOX.Text + "}," + "{받는분 주소}:{" + Receive_address_TEXTBOX.Text + "}" +
-                ",{내용물}:{" + Contents_TEXTBOX.Text + "},{요청사항}:{" + Requests_TEXTBOX.Text + "},{지불방법}:{" + Payment_COMBOBOX.Text + "}]";
-            byte[] StrByte = Encoding.UTF8.GetBytes(str);
-            // MessageBox.Show(Convert.ToString(StrByte));
-            //Client_Connect.socket.Send(StrByte);
+            sResponse = webClient.DownloadString(conn);
+            MessageBox.Show(sResponse);
             Text_Clear();
         }
         void Text_Clear()
@@ -58,39 +64,38 @@ namespace Client
             Contents_TEXTBOX.Clear();
             Payment_COMBOBOX.SelectedIndex = 0;
         }
-
-        private void Label5_Click(object sender, EventArgs e)
+        private void re(string con)
         {
-
+            string conn = con;
+            webClient.Encoding = UTF8Encoding.UTF8;
+            sResponse = webClient.DownloadString(conn);
+            JArray jarr = JArray.Parse("["+sResponse+"]");
+            foreach(JObject jObject in jarr)
+            {
+                send_name = jObject["sender_name"].ToString();
+                send_phone = jObject["sender_phone"].ToString();
+                send_address = jObject["sender_address"].ToString();
+                reipient_name = jObject["recipient_name"].ToString();
+                reipient_phone = jObject["recipient_phone"].ToString();
+                reipient_address = jObject["recipient_address"].ToString();
+                paymont = jObject["payment"].ToString();
+            }
         }
-
-        private void Label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CHECK_BUTTON_Click(object sender, EventArgs e)
         {
-            String sResponse = "";
-
-            WebClient webClient = new WebClient();
-            webClient.Encoding = UTF8Encoding.UTF8;
-
-            //sResponse = webClient.DownloadString("http://210.93.84.207/rest/Check_invoice_num.php?invoice_number=1234");
-            sResponse = webClient.DownloadString("http://210.93.84.207/rest/signup.php?id=1234&pw=10&name=바보천중&phone=010-0100-0011&branch=asdf&job=0");//회원가입
-            JObject jobj = JObject.Parse(sResponse);
-            String hi = sResponse;
-            MessageBox.Show(hi);
+            param = "/rest/Check_invoice_num.php?invoice_number=1234";
+            string con = url + param;
+            re(con);
+            DataTable table = new DataTable();
+            table.Columns.Add("보내는 사람", typeof(string));
+            table.Columns.Add("보내는 사람 번호", typeof(string));
+            table.Columns.Add("보내는 사람 주소", typeof(string));
+            table.Columns.Add("받는 사람", typeof(string));
+            table.Columns.Add("받는 사람 번호", typeof(string));
+            table.Columns.Add("받는 사람 주소", typeof(string));
+            table.Columns.Add("지불 방법", typeof(string));
+            table.Rows.Add(send_name, send_phone, send_address, reipient_name, reipient_phone, reipient_address, paymont);
+            dataGridView1.DataSource = table;
         }
     }
 }
